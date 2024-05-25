@@ -8,18 +8,18 @@ import options from "../auth/[...nextauth]/options";
 export function GET(request: NextRequest) {}
 
 export async function POST(request: NextRequest) {
-  const session = await getServerSession(options);
+  // const session = await getServerSession(options);
 
-  if (!session) {
-    return NextResponse.json({ error: "Not authenticated!" }, { status: 401 });
-  }
+  // if (!session) {
+  //   return NextResponse.json({ error: "Not authenticated!" }, { status: 401 });
+  // }
 
-  if (session.user?.role !== "ADMIN") {
-    return NextResponse.json(
-      { error: "Only Admin can create Users!" },
-      { status: 401 }
-    );
-  }
+  // if (session.user?.role !== "ADMIN") {
+  //   return NextResponse.json(
+  //     { error: "Only Admin can create Users!" },
+  //     { status: 401 }
+  //   );
+  // }
 
   const body = await request.json();
   const validation = userSchema.safeParse(body);
