@@ -13,9 +13,9 @@ const Users = async () => {
   // }
   const users = await prisma.user.findMany();
 
-  if (!users || users.length <= 0) {
-    return <p className=" text-destructive">No users found!</p>;
-  }
+  // if (!users || users.length <= 0) {
+  //   return <p className=" text-destructive">No users found!</p>;
+  // }
 
   return (
     <div>
